@@ -3,12 +3,12 @@ app:
     host: localhost
     port: 5432
     name: testBank
-    username: wallet
+    username: postgres
     password: 1234
 
 spring:
   application:
-    name: Wallets Service
+    name: testBank
   datasource:
     url: jdbc:postgresql://${app.db.host}:${app.db.port}/${app.db.name}?ApplicationName=${spring.application.name}
     username: ${app.db.username}

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 @Setter
 @Getter
@@ -16,11 +17,10 @@ import java.util.UUID;
 public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     @Column(name = "wallet_id")
     private UUID walletId;
     @Column(name = "amount")
-    private long amount;
+    private Double amount;
 
     public enum OperationType {
         Deposit,

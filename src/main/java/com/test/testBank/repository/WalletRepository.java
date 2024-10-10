@@ -1,4 +1,4 @@
-package com.test.testBank.model.repository;
+package com.test.testBank.repository;
 
 import com.test.testBank.model.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,4 +9,5 @@ import java.util.UUID;
 @Repository
 public interface WalletRepository extends JpaRepository<Wallet,
         UUID> {
+
 }
