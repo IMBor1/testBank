@@ -50,7 +50,7 @@ public class WalletControllerTest {
     public void testCreateWallet() throws Exception {
         Wallet wallet = new Wallet();
         wallet.setWalletId(UUID.randomUUID());
-        wallet.setAmount(1000L);
+        wallet.setAmount(1000.0);
 
         when(walletService.createWallet(any(Wallet.class))).thenReturn(wallet);
 
@@ -67,11 +67,11 @@ public class WalletControllerTest {
         UUID walletId = UUID.randomUUID();
         WalletDto walletDto = new WalletDto();
         walletDto.setOperationType(Wallet.OperationType.Withdraw);
-        walletDto.setAmount(500L);
+        walletDto.setAmount(500.0);
 
         Wallet updatedWallet = new Wallet();
         updatedWallet.setWalletId(walletId);
-        updatedWallet.setAmount(500L);
+        updatedWallet.setAmount(500.0);
 
         when(walletService.updateWallet(any(WalletDto.class), eq(walletId))).thenReturn(updatedWallet);
 
@@ -88,7 +88,7 @@ public class WalletControllerTest {
         UUID walletId = UUID.randomUUID();
         Wallet wallet = new Wallet();
         wallet.setWalletId(walletId);
-        wallet.setAmount(1000L);
+        wallet.setAmount(1000.0);
 
         when(walletService.findWallet(eq(walletId))).thenReturn(wallet);
 
