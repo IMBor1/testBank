@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1234
+      SERVER_TOMCAT_MAX_THREADS: 200
+      SERVER_TOMCAT_ACCEPT_COUNT: 100
+    ports:
+      - "5432:5432"
