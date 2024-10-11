@@ -15,3 +15,4 @@ spring:
     password: ${app.db.password}
 
 spring.liquibase.change-log: classpath:liquibase/changelog-master.yml
+
