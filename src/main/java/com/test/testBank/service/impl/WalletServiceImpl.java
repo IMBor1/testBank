@@ -25,7 +25,7 @@ public class WalletServiceImpl implements WalletService {
     @Override
     public Wallet updateWallet(WalletDto walletDto, UUID walletId) {
         Wallet wallet = walletRepository.findById(walletId).orElseThrow(NotFoundWithdraw::new);
-        if(walletDto.getOperationType()== Wallet.OperationType.Withdraw &&
+        if(walletDto.getOperationType()== Wallet.OperationType.WITHDRAW &&
         walletDto.getAmount() < walletRepository.findById(walletId).orElseThrow().getAmount());
         wallet.setAmount(walletDto.getAmount());
         wallet.setOperationType(walletDto.getOperationType());

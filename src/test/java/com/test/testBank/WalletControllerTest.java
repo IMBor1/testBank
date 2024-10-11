@@ -23,8 +23,6 @@ import java.util.UUID;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
-import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.post;
-import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -66,7 +64,7 @@ public class WalletControllerTest {
     public void testUpdateWallet() throws Exception {
         UUID walletId = UUID.randomUUID();
         WalletDto walletDto = new WalletDto();
-        walletDto.setOperationType(Wallet.OperationType.Withdraw);
+        walletDto.setOperationType(Wallet.OperationType.WITHDRAW);
         walletDto.setAmount(500.0);
 
         Wallet updatedWallet = new Wallet();
